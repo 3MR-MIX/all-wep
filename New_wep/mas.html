@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorfty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #circleContainer {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #ddd; 
+            transition: background-color 0.3s;
+        }
+
+        #innerCircle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #3498db; 
+        }
+
+        #colorPicker {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="circleContainer">
+        <div id="innerCircle"></div>
+    </div>
+
+    <input type="color" id="colorPicker" onchange="changeInnerCircleColor(this.value)">
+
+    <script>
+        function changeInnerCircleColor(color) {
+            document.getElementById('innerCircle').style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
